@@ -1,18 +1,13 @@
-import Datastore from 'nedb'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 import 'dayjs/locale/fr'
+import db from '../common/db'
 
 dayjs.extend(localizedFormat)
 dayjs.locale('fr')
 
 export async function getServerSideProps(context) {
-    const db = new Datastore({
-        filename: 'data/data',
-        autoload: true
-    })
-
     let docs = await new Promise((resolve,reject) => {
         db.find({luc: {$exists:true}}, (err,docs) => {
             if (err) reject(err)
