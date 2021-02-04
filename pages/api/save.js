@@ -4,7 +4,7 @@ const path = require('path')
 export default (req, res) => {
     if (req.method === 'POST') {
         const db = new Datastore({
-            filename: path.join(__dirname,'/data'),
+            filename: path.join(__dirname,'/data/data'),
             autoload: true
         })
 
