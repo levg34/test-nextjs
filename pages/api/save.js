@@ -1,10 +1,10 @@
 const Datastore = require('nedb')
+const path = require('path')
 
 export default (req, res) => {
     if (req.method === 'POST') {
-        // Process a POST request
         const db = new Datastore({
-            filename: 'data/data',
+            filename: path.join(__dirname,'/data'),
             autoload: true
         })
 
