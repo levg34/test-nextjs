@@ -9,6 +9,7 @@ export default function Database() {
         e.preventDefault()
         axios.post('/api/save',{luc,date:(new Date()).toISOString()})
         setLuc('')
+        window.location = '/lucs'
     }
 
     return (<>

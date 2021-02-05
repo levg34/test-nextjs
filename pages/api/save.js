@@ -1,12 +1,13 @@
 const Datastore = require('nedb')
 const path = require('path')
 
+const db = new Datastore({
+    filename: path.join(process.cwd(),'/data/data'),
+    autoload: true
+})
+
 export default (req, res) => {
     if (req.method === 'POST') {
-        const db = new Datastore({
-            filename: path.join(__dirname,'/data/data'),
-            autoload: true
-        })
 
         db.insert(req.body, function (err, newDoc) {
             if (err) res.status(500).json(err)

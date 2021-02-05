@@ -10,8 +10,8 @@ dayjs.locale('fr')
 
 export async function getServerSideProps(context) {
     const db = new Datastore({
-        filename: path.join(__dirname,'/data/data'),
-         autoload: true
+        filename: path.join(process.cwd(),'/data/data'),
+        autoload: true
     })
     
     let docs = await new Promise((resolve,reject) => {
