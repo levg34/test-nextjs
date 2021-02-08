@@ -34,6 +34,7 @@ export default function Home(concerts) {
         </h1>
         <h2><Link href="/database">Database</Link></h2>
         <h2><Link href="/lucs">Lucs</Link></h2>
+        <h2><Link href="/realtime_lucs">Lucs (realtime)</Link></h2>
         <Concerts concerts={concerts.concerts}/>
       </main>
     </div>
